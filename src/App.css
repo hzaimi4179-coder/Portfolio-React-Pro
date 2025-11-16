@@ -1,0 +1,51 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  background: #fff6fa; /* rose très clair doux */
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+
+/* Halo rose pastel */
+.logo:hover {
+  filter: drop-shadow(0 0 2em rgba(255, 143, 177, 0.7)); /* rose */
+}
+
+/* Halo mauve doux */
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em rgba(202, 160, 255, 0.7)); /* mauve */
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+  background: #ffffff; /* blanc propre */
+  border-radius: 14px;
+  box-shadow: 0 4px 14px rgba(255, 182, 193, 0.25); /* ombre rosée douce */
+  border: 1px solid #ffd6e5; /* rose pastel léger */
+}
+
+.read-the-docs {
+  color: #c67ca8; /* mauve rosé élégant */
+}

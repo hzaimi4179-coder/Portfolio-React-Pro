@@ -1,0 +1,206 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: #fdf8f3;
+    --foreground: #3a2317;
+    --muted: #f5e6d3;
+    --muted-foreground: #8b6f47;
+    --popover: #ffffff;
+    --popover-foreground: #3a2317;
+    --card: #ffffff;
+    --card-foreground: #3a2317;
+    --border: #d4b896;
+    --input: #e8dcc8;
+    --primary: #8b4513;
+    --primary-foreground: #ffffff;
+    --secondary: #d2691e;
+    --secondary-foreground: #ffffff;
+    --accent: #cd853f;
+    --accent-foreground: #3a2317;
+    --destructive: #8b0000;
+    --destructive-foreground: #ffffff;
+    --ring: #8b4513;
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: #1a1410;
+    --foreground: #f5e6d3;
+    --muted: #2d241a;
+    --muted-foreground: #d4b896;
+    --popover: #241c16;
+    --popover-foreground: #f5e6d3;
+    --card: #241c16;
+    --card-foreground: #f5e6d3;
+    --border: #4a3f33;
+    --input: #3a2f23;
+    --primary: #cd853f;
+    --primary-foreground: #1a1410;
+    --secondary: #8b4513;
+    --secondary-foreground: #f5e6d3;
+    --accent: #daa520;
+    --accent-foreground: #1a1410;
+    --destructive: #dc143c;
+    --destructive-foreground: #f5e6d3;
+    --ring: #cd853f;
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    background: linear-gradient(135deg, #faf8f5 0%, #f5e6d3 20%, #edd9c1 40%, #e8d4b8 60%, #f5e6d3 80%, #faf8f5 100%) !important;
+    background-attachment: fixed !important;
+    min-height: 100vh !important;
+  }
+  
+  .dark body {
+    background: linear-gradient(135deg, #1a1410 0%, #2d241a 25%, #241c16 50%, #2d241a 75%, #1a1410 100%);
+    background-attachment: fixed;
+  }
+  
+  /* Dégradés pour les boutons */
+  .bg-gradient-primary {
+    background: linear-gradient(135deg, #8b4513 0%, #a0522d 50%, #cd853f 100%) !important;
+  }
+  
+  .bg-gradient-secondary {
+    background: linear-gradient(135deg, #d2691e 0%, #daa520 100%) !important;
+  }
+  
+  .bg-gradient-accent {
+    background: linear-gradient(135deg, #cd853f 0%, #daa520 100%) !important;
+  }
+  
+  /* Effets de luxe */
+  .luxury-card {
+    background: linear-gradient(145deg, #ffffff 0%, #fefdfb 50%, #faf8f5 100%) !important;
+    border: 1px solid #d4b896 !important;
+    box-shadow: 0 4px 20px rgba(139, 69, 19, 0.15), 0 0 40px rgba(205, 133, 63, 0.08) !important;
+    backdrop-filter: blur(10px) !important;
+  }
+  
+  .dark .luxury-card {
+    background: linear-gradient(145deg, #2a1f1a 0%, #241c16 50%, #1a1410 100%) !important;
+    border: 1px solid #4a3f33 !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4), 0 0 40px rgba(205, 133, 63, 0.15) !important;
+    backdrop-filter: blur(10px) !important;
+  }
+  
+  /* Textures et effets */
+  .text-gradient-primary {
+    background: linear-gradient(135deg, #704214 0%, #8b4513 30%, #a0522d 70%, #cd853f 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    filter: drop-shadow(0 1px 2px rgba(139, 69, 19, 0.2)) !important;
+  }
+  
+  .text-gradient-secondary {
+    background: linear-gradient(135deg, #b8860b 0%, #daa520 50%, #f4a460 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    filter: drop-shadow(0 1px 2px rgba(218, 165, 32, 0.2)) !important;
+  }
+  
+  .hover-lift {
+    transition: all 0.3s ease !important;
+  }
+  
+  .hover-lift:hover {
+    transform: translateY(-4px) !important;
+    box-shadow: 0 8px 30px rgba(139, 69, 19, 0.2) !important;
+  }
+  
+  /* Boutons luxueux */
+  .btn-luxury {
+    background: linear-gradient(135deg, #704214 0%, #8b4513 30%, #a0522d 70%, #cd853f 100%) !important;
+    color: white !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    padding: 12px 28px !important;
+    border-radius: 10px !important;
+    font-weight: 600 !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 4px 15px rgba(139, 69, 19, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) !important;
+  }
+  
+  .btn-luxury:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 25px rgba(139, 69, 19, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+    background: linear-gradient(135deg, #8b4513 0%, #a0522d 30%, #cd853f 70%, #daa520 100%) !important;
+  }
+  
+  /* Badges luxueux */
+  .badge-luxury {
+    background: linear-gradient(135deg, #b8860b 0%, #daa520 50%, #f4a460 100%) !important;
+    color: #2c1810 !important;
+    padding: 6px 14px !important;
+    border-radius: 20px !important;
+    font-size: 0.875rem !important;
+    font-weight: 600 !important;
+    box-shadow: 0 2px 8px rgba(218, 165, 32, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.3) !important;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.3) !important;
+  }
+  
+  /* Tags */
+  .tag-luxury {
+    background: linear-gradient(135deg, #cd853f 0%, #daa520 50%, #f4a460 100%) !important;
+    color: #2c1810 !important;
+    padding: 3px 10px !important;
+    border-radius: 12px !important;
+    font-size: 0.75rem !important;
+    font-weight: 600 !important;
+    box-shadow: 0 1px 4px rgba(205, 133, 63, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.3) !important;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.3) !important;
+  }
+  
+  /* Cartes de projets */
+  .project-card {
+    background: linear-gradient(145deg, #ffffff 0%, #fefdfb 50%, #faf8f5 100%) !important;
+    border: 1px solid #d4b896 !important;
+    box-shadow: 0 4px 20px rgba(139, 69, 19, 0.15), 0 0 40px rgba(205, 133, 63, 0.08) !important;
+    backdrop-filter: blur(10px) !important;
+    padding: 1.5rem !important;
+    border-radius: 0.75rem !important;
+    transition: all 0.3s ease !important;
+  }
+  
+  .project-card:hover {
+    transform: translateY(-4px) !important;
+    box-shadow: 0 8px 30px rgba(139, 69, 19, 0.25), 0 0 50px rgba(205, 133, 63, 0.12) !important;
+    background: linear-gradient(145deg, #ffffff 0%, #fefdfb 40%, #faf8f5 100%) !important;
+  }
+  
+  .dark .project-card {
+    background: linear-gradient(145deg, #2a1f1a 0%, #241c16 50%, #1a1410 100%) !important;
+    border: 1px solid #4a3f33 !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4), 0 0 40px rgba(205, 133, 63, 0.15) !important;
+  }
+  
+  .dark .project-card:hover {
+    transform: translateY(-4px) !important;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5), 0 0 50px rgba(205, 133, 63, 0.2) !important;
+  }
+  
+  /* Tags */
+  .tag-luxury {
+    background: linear-gradient(135deg, #cd853f 0%, #daa520 50%, #f4a460 100%) !important;
+    color: #2c1810 !important;
+    padding: 3px 10px !important;
+    border-radius: 12px !important;
+    font-size: 0.75rem !important;
+    font-weight: 600 !important;
+    box-shadow: 0 1px 4px rgba(205, 133, 63, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.3) !important;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.3) !important;
+  }
+}
